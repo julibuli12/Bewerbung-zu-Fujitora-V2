@@ -1,9 +1,11 @@
 const reveals = document.querySelectorAll('.reveal');
+
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add('visible');
   });
 }, { threshold: 0.16 });
+
 reveals.forEach(el => revealObserver.observe(el));
 
 const links = [...document.querySelectorAll('.nav a')];
@@ -17,6 +19,6 @@ const navObserver = new IntersectionObserver((entries) => {
       if (active) active.classList.add('active');
     }
   });
-}, { threshold: 0.45 });
+}, { threshold: 0.42 });
 
 sections.forEach(section => navObserver.observe(section));
